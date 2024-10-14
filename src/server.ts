@@ -11,19 +11,19 @@ app.use(express.json());
 app.use(cors());
 //codigo para cloudinary
 app.use(fileUpload({
-  limits: { fileSize: 50 * 1024* 1024}  // No maximo de 50 mb
+  limits: { fileSize: 50 * 1024 * 1024 }  // No maximo de 50 mb
 }))
 
 app.use(router);
 
-/* app.use(
+app.use(
   '/files',
   express.static(path.resolve(__dirname, '..', 'tmp'))
 )
-  */
+
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-  if(err instanceof Error){
+  if (err instanceof Error) {
     //Se for uma instancia do tipo error
     return res.status(400).json({
       error: err.message
