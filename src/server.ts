@@ -16,10 +16,11 @@ app.use(fileUpload({
 
 app.use(router);
 
-app.use(
+/* app.use(
   '/files',
   express.static(path.resolve(__dirname, '..', 'tmp'))
 )
+  */
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   if(err instanceof Error){
